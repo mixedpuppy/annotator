@@ -105,6 +105,13 @@ let watchedServices = [
     }
   },
   {
+    url: "https://www.facebook.com/v2.0/dialog/share/submit",
+    name: "facebook",
+    getSavedUrl(postData) {
+      return JSON.parse(postData.share_action_properties).object;
+    }
+  },
+  {
     url: "https://api.getpocket.com/v3/firefox/save",
     name: "pocket",
     getSavedUrl(postData) {
